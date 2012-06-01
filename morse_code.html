@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Morse Code</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="Ryan Brubaker">
+
+      <!-- styles -->
+      <link href="bootstrap.min.css" rel="stylesheet">
+      <link href="bootstrap-responsive.min.css" rel="stylesheet">
+    
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+         <![endif]-->
+
+   </head>
+   
+   <body>
+      <div class="container">
+         <div style="-webkit-user-select: none; -moz-user-select: none;">
+            <h1>Morse Code</h1>
+            <br />
+            <ul>
+               <li>Dot: Click</li>
+               <li>Dash: Click and hold for 1/4 of a second or greater</li>
+               <li>Word separator: Click and hold for 1 second or greater</li>
+               <li>The decoder "operates" on one character at a time. Let the communication line empty out before starting
+                   a new character. There will be a small delay before the character is output to the screen, but you can still
+                   begin the next character once the communication line is empty.<li>
+               <li>The decoder ignores any dot/dash combination that it doesn't understand</li>
+            </ul>
+
+
+            <br />
+            <br />
+
+            <div class="row">
+   
+               <div id="straight-key-div" class="span2">
+                  <a class="btn" id="straight-key">Signal</a>
+               </div>
+   
+               <div id="communication-line-div" class="span6">
+                  <canvas id="communicationLineCanvas" width="500" height="50"></canvas>
+               </div>
+   
+               <div id="messageBoxDiv" class="span1 offset1">
+                  <textarea id="messageBox"></textarea>
+               </div>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="row">
+               <table class="table table-bordered">
+                  <tr>
+                     <td>A</td>
+                     <td>&#149 &#150</td>
+                     <td>J</td>
+                     <td>&#149 &#150 &#150 &#150</td>
+                     <td>S</td>
+                     <td>&#149 &#149 &#149</td>
+                  </tr>
+                  <tr>
+                     <td>B</td>
+                     <td>&#150 &#149 &#149 &#149</td>
+                     <td>K</td>
+                     <td>&#150 &#149 &#150</td>
+                     <td>T</td>
+                     <td>&#150</td>
+                  </tr>
+                  <tr>
+                     <td>C</td>
+                     <td>&#150 &#149 &#150 &#149</td>
+                     <td>L</td>
+                     <td>&#149 &#150 &#149 &#149</td>
+                     <td>U</td>
+                     <td>&#149 &#149 &#150</td>
+                  </tr>
+                  <tr>
+                     <td>D</td>
+                     <td>&#150 &#149 &#149</td>
+                     <td>M</td>
+                     <td>&#150 &#150</td>
+                     <td>V</td>
+                     <td>&#149 &#149 &#149 &#150</td>
+                  </tr>
+                  <tr>
+                     <td>E</td>
+                     <td>&#149</td>
+                     <td>N</td>
+                     <td>&#150 &#149</td>
+                     <td>W</td>
+                     <td>&#149 &#150 &#150</td>
+                  </tr>
+                  <tr>
+                     <td>F</td>
+                     <td>&#149 &#149 &#150 &#149</td>
+                     <td>O</td>
+                     <td>&#150 &#150 &#150</td>
+                     <td>X</td>
+                     <td>&#150 &#149 &#149 &#150</td>
+                  </tr>
+                  <tr>
+                     <td>G</td>
+                     <td>&#150 &#150 &#149</td>
+                     <td>P</td>
+                     <td>&#149 &#150 &#150 &#149</td>
+                     <td>Y</td>
+                     <td>&#150 &#149 &#150 &#150</td>
+                  </tr>
+                  <tr>
+                     <td>H</td>
+                     <td>&#149 &#149 &#149 &#149</td>
+                     <td>Q</td>
+                     <td>&#150 &#150 &#149 &#150</td>
+                     <td>Z</td>
+                     <td>&#150 &#150 &#149 &#149</td>
+                  </tr>
+                  <tr>
+                     <td>I</td>
+                     <td>&#149 &#149</td>
+                     <td>R</td>
+                     <td>&#149 &#150 &#149</td>
+                     <td />
+                     <td />
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      
+      <script src="jquery-1.7.2.min.js"></script>
+      <script src="bootstrap.min.js"></script>
+      <script src="underscore-min.js"></script>
+      <script src="backbone-min.js"></script>
+      <script src="morse_code.js"></script>
+
+
+   </body>
+
+</html>
