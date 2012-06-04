@@ -158,11 +158,6 @@ init = ->
    communicationLineView = new CommunicationLineView('el': $('#communication-line-div'), 'model': communicationLine)
    decoderView = new DecoderView('el': $('messageBoxDiv'), 'model':decoder)
    
-   _.extend(communicationLineView, Backbone.Events)
-   communicationLineView.on("tokenReachedReceiver", (token) ->
-      decoder.test()
-   )
-   
    context = document.getElementById("communicationLineCanvas").getContext('2d')
    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
    drawSignalLine(context)

@@ -291,10 +291,6 @@
       'el': $('messageBoxDiv'),
       'model': decoder
     });
-    _.extend(communicationLineView, Backbone.Events);
-    communicationLineView.on("tokenReachedReceiver", function(token) {
-      return decoder.test();
-    });
     context = document.getElementById("communicationLineCanvas").getContext('2d');
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     return drawSignalLine(context);
