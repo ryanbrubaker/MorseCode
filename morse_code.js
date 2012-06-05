@@ -265,7 +265,10 @@
 
   })(Backbone.View);
 
-  drawSignalLine = function(context) {
+  drawSignalLine = function() {
+    var context;
+    context = document.getElementById("communicationLineCanvas").getContext('2d');
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     context.moveTo(0, 30);
     context.lineTo(500, 30);
     context.strokeStyle = "#000";
@@ -274,7 +277,7 @@
   };
 
   init = function() {
-    var communicationLine, communicationLineView, context, decoder, decoderView, straightKey;
+    var communicationLine, communicationLineView, decoder, decoderView, straightKey;
     decoder = new MorseDecoder;
     communicationLine = new CommunicationLine({
       'decoder': decoder
@@ -291,9 +294,7 @@
       'el': $('messageBoxDiv'),
       'model': decoder
     });
-    context = document.getElementById("communicationLineCanvas").getContext('2d');
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-    return drawSignalLine(context);
+    return drawSignalLine();
   };
 
   $(document).ready(init);
