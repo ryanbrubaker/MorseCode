@@ -117,7 +117,7 @@ class CommunicationLineView extends Backbone.View
       
    render: (tokens) =>
       context = document.getElementById("communicationLineCanvas").getContext('2d')
-      context.clearRect(0, 0, context.canvas.width, 29);
+      context.clearRect(0, 0, context.canvas.width, 29)
       tokenNum = 0
       for token in tokens
          do (token) ->
@@ -146,12 +146,12 @@ class DecoderView extends Backbone.View
                
 drawSignalLine = ->
    context = document.getElementById("communicationLineCanvas").getContext('2d')
-   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+   context.clearRect(0, 0, context.canvas.width, context.canvas.height)
    context.moveTo(0, 30)
    context.lineTo(500, 30)
-   context.strokeStyle = "#000";
+   context.strokeStyle = "#000"
    context.closePath()
-   context.stroke();
+   context.stroke()
       
 init = ->
    decoder = new MorseDecoder
